@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Urban Bites — Starter Project</title>
+  <style>
+    /* simple variables and reset */
+    :root{
+      --bg:#1d1d1d;
+      --card:#ffffff;
+      --accent:#c76cff;    /* title color */
+      --price:#c08b2e;     /* price color (gold-ish) */
+      --muted:#7f7f7f;
+      --max:1100px;
+      --gap:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family: Arial, Helvetica, sans-serif;background:var(--bg);color:#111}
+    .wrap{max-width:var(--max);margin:36px auto;padding:20px}
+
+    /* header */
+    header{text-align:center;margin-bottom:18px}
+    h1{color:var(--accent);font-size:28px;margin-bottom:6px}
+    p.lead{color:var(--muted);font-size:14px;margin:0 auto;max-width:720px}
+
+    /* grid of cards: 3 columns desktop, 2 tablet, 1 phone */
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:28px}
+    @media (max-width:900px){.menu-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:540px){.menu-grid{grid-template-columns:1fr}}
+
+    /* card */
+    .card{
+      background:var(--card);
+      border-radius:10px;
+      padding:18px;
+      box-shadow:0 8px 18px rgba(19,18,16,0.06);
+      transition:transform .18s ease, box-shadow .18s ease;
+      min-height:110px;
+    }
+    .card:hover{transform:translateY(-6px); box-shadow:0 18px 32px rgba(19,18,16,0.08)}
+
+    /* top row inside card: title left, price right */
+    .card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+    .card-title{font-weight:700;font-size:16px;color:#222}
+    .card-price{color:var(--price);font-weight:700}
+
+    /* description */
+    .card-desc{font-size:13px;color:var(--muted);line-height:1.45}
+
+    /* footer */
+    footer{text-align:center;color:var(--accent);margin-top:34px;padding:18px 0;font-size:14px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Urban Bites — Street Snack Menu</h1>
+      <p class="lead">A simple starter project: nine snack cards with price and a short description. Clean layout, easy to edit — ideal for a beginner submission.</p>
+    </header>
+
+    <main>
+      <section class="menu-grid">
+        <article class="card">
+          <div class="card-head">
+            <div class="card-title">Crispy Bao</div>
+            <div class="card-price">$6</div>
+          </div>
+          <p class="card-desc">Soft steamed bun filled with spiced mushroom & pickled cucumber — small and tasty.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div class="card-title">Spicy Tacos</div>
+            <div class="card-price">$5</div>
+          </div>
+          <p class="card-desc">Two corn tacos with chili-lime slaw and grilled corn. Quick street favourite.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div class="card-title">Crisp Fries</div>
+            <div class="card-price">$4</div>
+          </div>
+          <p class="card-desc">Hand-cut fries tossed with sea salt and herb dust. Served with ketchup.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div class="card-title">Mini Slider</div>
+            <div class="card-price">$7</div>
+          </div>
+          <p class="card-desc">Tiny beef patty, melted cheese, pickle and sauce — neat and filling.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div class="card-title">Veggie Wrap</div>
+            <div class="card-price">$6</div>
+          </div>
+          <p class="card-desc">Grilled veggies, hummus and fresh greens wrapped in a soft tortilla.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div class="card-title">Soy Glazed Wings</div>
+            <div class="card-price">$8</div>
+          </div>
+          <p class="card-desc">Sticky wings with sesame seeds — sweet, salty and easy to share.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div class="card-title">Falafel Box</div>
+            <div class="card-price">$6</div>
+          </div>
+          <p class="card-desc">Crispy falafel, tahini dip and pickled veg. A vegetarian street classic.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div class="card-title">Ginger Soda</div>
+            <div class="card-price">$3</div>
+          </div>
+          <p class="card-desc">Homemade ginger soda — fizzy and refreshing, not too sweet.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div class="card-title">Sweet Bite</div>
+            <div class="card-price">$4</div>
+          </div>
+          <p class="card-desc">Two mini pastries with honey drizzle — a small sweet finish.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      Created by <strong>Navraj Amgai</strong>
+    </footer>
+  </div>
+</body>
+</html>

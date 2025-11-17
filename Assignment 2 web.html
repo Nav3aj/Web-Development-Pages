@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gaming Hub — Simple Landing</title>
+
+  <style>
+    :root{--bg:#0b0f14; --card:#0f1720; --accent:#7c3aed; --accent2:#06b6d4; --muted:#9aa4ad; --max:1100px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#e6eef6}
+    .wrap{max-width:var(--max);margin:28px auto;padding:18px}
+
+    .title{color:var(--accent);text-align:center;font-size:26px;margin-bottom:6px}
+    .sub{color:var(--muted);text-align:center;margin-bottom:18px}
+
+    .features{display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap;margin-bottom:22px}
+    .feature{flex:1 1 22%;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:8px;text-align:center}
+    .icon{width:54px;height:54px;margin:0 auto 8px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,0.03);color:var(--accent2);font-weight:bold}
+    .feature small{display:block;color:var(--muted);font-size:13px;margin-top:6px}
+
+    .guests{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
+    .card{background:var(--card);padding:14px;border-radius:10px;text-align:center;box-shadow:0 10px 24px rgba(0,0,0,.6)}
+    .avatar{width:86px;height:86px;border-radius:50%;overflow:hidden;margin:-46px auto 8px;border:4px solid rgba(124,58,237,0.12)}
+    .card h3{color:#fff;margin:6px 0;font-size:16px}
+    .card p{color:var(--muted);font-size:13px}
+    .btn{display:inline-block;margin-top:10px;padding:8px 12px;background:var(--accent);color:#fff;text-decoration:none;border-radius:6px}
+
+    .products h2{text-align:center;color:var(--accent);margin:6px 0 18px}
+
+    /* ---------- FIX: responsive centered product grid ---------- */
+    /* auto-fit with minmax makes cells adapt to available space.
+       max-width + margin:auto centers the whole grid. */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+      gap:16px;
+      max-width:980px;    /* keeps the row width controlled so items are centered */
+      margin:0 auto;      /* center the whole grid under the heading */
+      align-items:start;
+    }
+    .product{background:transparent}
+    .product img{width:100%;height:140px;object-fit:cover;border-radius:8px;display:block}
+    .meta{padding:8px;color:var(--muted);font-size:13px;text-align:left}
+
+    @media (max-width:900px){
+      .guests{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      .features{flex-direction:column;align-items:center}
+      .guests{grid-template-columns:1fr}
+    }
+    @media (max-width:360px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1 class="title">Gaming Hub — New & Trending</h1>
+      <p class="sub">Dark neon theme, simple code — change texts and images easily.</p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">FPS</div><strong>High FPS</strong><small>Optimized performance</small>
+        </div>
+        <div class="feature">
+          <div class="icon">MMO</div><strong>Multiplayer</strong><small>Join global servers</small>
+        </div>
+        <div class="feature">
+          <div class="icon">MOD</div><strong>Mods</strong><small>Customize your world</small>
+        </div>
+        <div class="feature">
+          <div class="icon">🚫</div><strong>No Ads</strong><small>Immersive play</small>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2 style="text-align:center;color:var(--accent);margin-bottom:10px">Featured Streamers</h2>
+      <div class="guests">
+        <div class="card">
+          <div style="height:40px"></div>
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" alt="s1" style="width:100%;height:100%;object-fit:cover"></div>
+          <h3>RazorShade</h3><p>Top FPS player & commentator.</p><a class="btn" href="#">Watch</a>
+        </div>
+
+        <div class="card">
+          <div style="height:40px"></div>
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop" alt="s2" style="width:100%;height:100%;object-fit:cover"></div>
+          <h3>NeonByte</h3><p>Speedrunner & modder.</p><a class="btn" href="#">Watch</a>
+        </div>
+
+        <div class="card">
+          <div style="height:40px"></div>
+          <div class="avatar"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=400&auto=format&fit=crop" alt="s3" style="width:100%;height:100%;object-fit:cover"></div>
+          <h3>GeoRift</h3><p>Indie game reviewer.</p><a class="btn" href="#">Watch</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="products">
+      <h2>HOT RELEASES</h2>
+
+      <!-- grid is centered and will keep items aligned in a row -->
+      <div class="grid">
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop" alt="g1">
+          <div class="meta">Neon Racer<br><small>Racing</small></div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop" alt="g3">
+          <div class="meta">Mech Arena<br><small>Action</small></div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop" alt="g4">
+          <div class="meta">Skyborne<br><small>Adventure</small></div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1471295253337-3ceaaedca402?q=80&w=800&auto=format&fit=crop" alt="g5">
+          <div class="meta">Shadow Ops<br><small>Stealth</small></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+<footer style="text-align:center; color:#7c3aed; margin-top:40px; padding:20px; font-size:14px;">
+    <p>Created by <strong>Navraj Amgai</strong></p>
+</footer>
+
+</html>
